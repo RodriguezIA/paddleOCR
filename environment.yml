@@ -1,0 +1,31 @@
+name: image-server
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+    # Framework web
+    - fastapi==0.119.0
+    - uvicorn[standard]
+    - httpx
+    - python-multipart
+
+    # PaddleOCR - OCR Engine
+    - paddleocr
+    - paddlepaddle==3.2.0
+    - opencv-python
+    - shapely
+    - pyclipper
+
+    # PaddleOCR opcional (para PP-StructureV3 si se arregla el bug)
+    # - "paddleocr[doc-parser]"
+
+    # Validación y configuración
+    - pydantic
+    - pydantic-settings
+
+    # Testing
+    - pytest
+    - pytest-cov
